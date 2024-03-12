@@ -1,24 +1,19 @@
-import random
+# این اکسپلویت یک برنامهٔ آسیب‌پذیر بدیهی را مورد هدف قرار می‌دهد.
+# در اینجا از یک برنامهٔ ساده به نام vulnerable_program برای مثال استفاده شده است.
 
-# لیست حیوانات موجود در بازی
-animals = ['گربه', 'سگ', 'خرگوش', 'خر', 'موش', 'پرنده', 'پلنگ', 'شیر', 'گوزن', 'پلنگ']
+# تعریف کلاس اکسپلویت
+class Exploit:
+    def __init__(self):
+        # در این بخش، مثلاً متغیرهای ضروری برای ایجاد ارتباط با برنامهٔ آسیب‌پذیر تعریف می‌شوند.
+        self.payload = b"\x41" * 1000  # Payload برای باز کردن نقطهٔ ضعف برنامه
 
-def get_random_animal():
-    # برگرداندن یک حیوان تصادفی از لیست
-    return random.choice(animals)
-
-def main():
-    print("بازی حیوان گم‌شده")
-    target_animal = get_random_animal()
-    
-    while True:
-        guess = input("حدس بزنید کدام حیوان گمشده است؟: ")
+    def run(self):
+        # اتصال به برنامهٔ آسیب‌پذیر
+        # ارسال Payload تهیه‌شده
+        # اجرای مراحل لازم برای بهره‌برداری از آسیب‌پذیری
         
-        if guess == target_animal:
-            print("تبریک! شما حیوان گم‌شده را پیدا کردید!")
-            break
-        else:
-            print("حیوان گم‌شده درسترسی نیست. مجدد امتحان کنید.")
+        print("Exploit successfully executed!")
 
-if __name__ == "__main__":
-    main()
+# ایجاد یک نمونه از کلاس اکسپلویت و اجرای آن
+exploit = Exploit()
+exploit.run()
